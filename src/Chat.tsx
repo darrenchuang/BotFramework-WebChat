@@ -147,6 +147,10 @@ export class Chat extends React.Component<ChatProps, {}> {
     }
 
     private saveHistoryRef(historyWrapper: any) {
+        if (!historyWrapper) {
+            this.historyRef = null;
+            return;
+        }
         this.historyRef = historyWrapper.getWrappedInstance();
     }
 
